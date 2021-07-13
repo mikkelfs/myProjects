@@ -43,7 +43,7 @@ Divs
     border: solid black 2px;
     text-align: center;
     position: relative;
-    left: 100px;
+    left: 150px;
     
 }
 
@@ -52,8 +52,12 @@ Divs
     border: solid black 2px;
     width: 400px;
     position: relative;
-    left: 30px;
+    left: 700px;
     top: 20px;
+}
+
+.bottom {
+    background-color: black;
 }
 
 .animationDiv {
@@ -133,6 +137,7 @@ Flex
 
 .flex2 {
     position: relative;
+    left: 600px;
     top: 50px;
     display: flex;
     flex-direction: column;
