@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Et forslag</title>
+</head>
+<body>
+
+	<div>
+		
+		<header>
+			<h1>FindYourLove</h1>
+		</header>
+		
+		<nav>
+			<ul>
+				<li><a href="alle-profiler.html">Alle profiler</a></li>
+				<li><a href="dagens-profil.html">Dagens profil</a></li>
+			</ul>
+		</nav>
+		
+		<main>
+		
+			<section>
+				<label>Tast inn ønsket alder</label>
+				<input id="age" type="text" value=""><br>
+				<label>Mann eller kvinne?</label>
+				<input id="manOrFemale" type="text" value="">
+				<input id="buttonSelector" type="button" value="Vis forslag">
+			</section>
+			
+			<section>
+				<div id="profileFrame"></div>
+			</section>
+			
+		</main>
+		
+	</div>
+	
+    <script>
+        // Henter inn elementer som skal brukes
+        document.getElementById('buttonSelector').onclick = onButtonClick;
+        
+        var ageSelect = document.getElementById('age'); 
+    
+        var manOrFemaleSelect = document.getElementById('manOrFemale'); 
+        
+        var profilePrint = document.getElementById('profileFrame');
+        
+        // Profiler:
+        // Navn
+        var namesArray = ['Are', 'Isak', 'Martin', 'Katrine', 'Ragnfrid', 'Silje'];
+        // Alder
+        var ageArray = [24, 29, 36, 23, 32, 28];
+        // Profilbilder 
+        var profilePictureArray = ['images/man1.jpg', 'images/man2.jpg', 'images/man3.JPG', 'images/woman1.jpg', 'images/woman2.jpg', 'images/woman3.jpg']; 
+        // Beskrivelser
+        var descriptionArray = ['Jeg har masse energi og jeg elsker å klatre i trær. Vil du være med å klatre i trær med meg?', 'Kunst og dans er min lidenskap! Jeg danser hver dag i stua. Dans med meg da vel!', 'Forretninger! Jeg gjør masse forretninger hele tida. Trenger noen til å avlaste meg når jeg ikke bruker tida på forretninger.', 'Vesker og sminke er min passion! Jeg må ha en sterk fyr som kan hjelpe meg med å shoppe.', 'Jeg har en ku sier møø og sau som sier bææ. Hvis du elsker dyr sånn som meg er vi soulmates.', 'Jeg sliter med konsentrasjonsvansker og blir lett frustrert. Kan du håndtere meg? Ikke mange som kan...' ]
+         
+        // Lager funksjon og if:
+        function onButtonClick () { 
+            
+            console.log('hei');
+                                   
+        if (ageSelect.value <= 25 && manOrFemaleSelect.value == "mann") {
+            profilePrint.innerHTML = `<img src="${profilePictureArray[0]}" alt="Profilen til Are">
+                                      <p>Navn: ${namesArray[0]}</p><p> Alder: ${ageArray[0]}</p>
+                                      <p>Beskrivelse: ${descriptionArray[0]}</p><br>` 
+        }
+        if (ageSelect.value <= 25 && manOrFemaleSelect.value == "kvinne") {
+            profilePrint.innerHTML = `<img src="${profilePictureArray[3]}" alt="Profilen til Are">
+                                      <p>Navn: ${namesArray[3]}</p><p> Alder: ${ageArray[3]}</p>
+                                      <p>Beskrivelse: ${descriptionArray[3]}</p><br>` 
+        }    
+        if (ageSelect.value >= 26 && manOrFemaleSelect.value == "mann") {
+            profilePrint.innerHTML = `<img src="${profilePictureArray[1]}" alt="Profilen til Isak">
+                                      <p>Navn: ${namesArray[1]}</p><p> Alder: ${ageArray[1]}</p>
+                                      <p>Beskrivelse: ${descriptionArray[1]}</p><br>
+
+                                      <img src="${profilePictureArray[2]}" alt="Profilen til Martin">
+                                      <p>Navn: ${namesArray[2]}</p><p> Alder: ${ageArray[2]}</p>
+                                      <p>Beskrivelse: ${descriptionArray[2]}</p><br>`
+        }
+        if (ageSelect.value >= 26 && manOrFemaleSelect.value == "kvinne") {
+            profilePrint.innerHTML =  `<img src="${profilePictureArray[4]}" alt="Profilen til Ragnfrid">
+                                      <p>Navn: ${namesArray[4]}</p><p> Alder: ${ageArray[4]}</p>
+                                      <p>Beskrivelse: ${descriptionArray[4]}</p><br>
+
+                                      <img src="${profilePictureArray[5]}" alt="Profilen til Silje">
+                                      <p>Navn: ${namesArray[5]}</p><p> Alder: ${ageArray[5]}</p>
+                                      <p>Beskrivelse: ${descriptionArray[5]}</p><br>` 
+        }    
+        else if (ageSelect.value == "" && manOrFemaleSelect.value == "") { 
+            for (var i = 0; i < profilePictureArray.length; i += 1) {
+            profilePrint.innerHTML += `<img src="${profilePictureArray[i]}" alt="Profilen til Are">
+                                      <p>Navn: ${namesArray[i]}</p><p> Alder: ${ageArray[i]}</p>
+                                      <p>Beskrivelse: ${descriptionArray[i]}</p>`  
+        }
+            
+        }
+        }
+       
+    </script>
+    
+    
+    
+    
+</body>
+</html>

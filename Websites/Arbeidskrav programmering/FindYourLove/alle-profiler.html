@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>FindYourLove</title>
+</head>
+<body>
+
+	<div>
+		
+		<header>
+			<h1>FindYourLove - Alle profiler</h1>
+		</header>
+		
+		<nav>
+			<ul>
+				<li><a href="alle-profiler.html">Alle profiler</a></li>
+				<li><a href="dagens-profil.html">Dagens profil</a></li>
+			</ul>
+		</nav>
+		
+	</div>
+    
+
+    
+    <div id="profileList"></div>
+    
+    <script>
+        
+        // Navn
+        var namesArray = ['Are', 'Isak', 'Martin', 'Katrine', 'Ragnfrid', 'Silje'];
+        // Alder
+        var ageArray = [24, 29, 36, 23, 32, 28];
+        // Profilbilder 
+        var profilePictureArray = ['images/man1.jpg', 'images/man2.jpg', 'images/man3.JPG', 'images/woman1.jpg', 'images/woman2.jpg', 'images/woman3.jpg']; 
+        // Beskrivelser
+        var descriptionArray = ['Jeg har masse energi og jeg elsker å klatre i trær. Vil du være med å klatre i trær med meg?', 'Kunst og dans er min lidenskap! Jeg danser hver dag i stua. Dans med meg da vel!', 'Forretninger! Jeg gjør masse forretninger hele tida. Trenger noen til å avlaste meg når jeg ikke bruker tida på forretninger.', 'Vesker og sminke er min passion! Jeg må ha en sterk fyr som kan hjelpe meg med å shoppe.', 'Jeg har en ku sier møø og sau som sier bææ. Hvis du elsker dyr sånn som meg er vi soulmates.', 'Jeg sliter med konsentrasjonsvansker og blir lett frustrert. Kan du håndtere meg? Ikke mange som kan...' ]
+        
+        // for løkke
+        for (var i = 0; i < profilePictureArray.length; i += 1) {
+            profileList.innerHTML += `<img src="${profilePictureArray[i]}" alt="Profilen til Are">
+                                      <p>Navn: ${namesArray[i]}</p><p> Alder: ${ageArray[i]}</p>
+                                      <p>Beskrivelse: ${descriptionArray[i]}</p>`
+            
+        }
+            
+        
+    </script>
+	
+</body>
+</html>

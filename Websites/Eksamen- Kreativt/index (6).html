@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<!--
+    Ettersom mye av innholdet på siden er skrevet på norsk, 
+    så fikk vi en warning i valideringen av siden om å endre language fra engelsk til norsk.
+-->
+<html lang="nb">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Utforsk havet</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+       <!--
+            Inni  headeren skal vi ha blå himmel, skyer og bølger.
+            Her bruker vi et bakgrunnsbilde som vi har laget selv.
+        -->
+    <header id="top-level">
+        <h1>Dypdykk i havet</h1>
+        <img id="clouds" src="images/clouds.png" alt="Bilder av skyer">
+        <div id="boat"></div>
+        <img id="header-background" src="images/header.png" alt = "Et bilde som viser verden over havet">
+    </header>
+        <!--
+            Main inneholder de forskjellige nivåene (sections) 
+            i havet etter hvor dypt man dykker. Vi bruker main for å få oppsettet mest semantisk korrekt. Ved å bruke main forteller vi brower
+            at her er hovedinnholdet på siden.
+    
+            Første seksjon inneholder første nivået av havdypet. Inneholder animerte bildefiler av plast og dyreliv. 
+            Faktaboks i en div med en nested div som en wrapper for tekst. Disse er inndeldt i klasser, fordi de brukes igjen på de andre seksjonene.
+            I hver seksjon har vi stylet en div med klassen "pull". Dette er en simpel strek som viser tydelig at faktaboksen kan dras ut.
+        -->
+        <main>
+        <section class="first-level">  
+            <div class="factbox-left">
+                <div class="factbox-container">
+                    <h2>Forurensing av havet</h2>
+                        <p>Hvert år dør store mengder sjøpattedyr, fugler og fisker av plastsøppel. 
+                            Samtidig går milliarder av mindre plastbiter ut i jordsmonn og hav, spises av dyr og organismer og havner i næringskjeden. 
+                            Naturvernforbundet jobber nå for å minske plastbruken i hele samfunnet, blant annet gjennom et forbud mot plastposer, avgift på plast og overgang til nedbrytbare materialer. 
+                            Plasten er i ferd med å bli et av våre største miljøproblemer. Hvert år havner 6,4 millioner tonn søppel i verdens hav. 
+                            Mellom 70 og 80 prosent av dette er plast. Kaster du en plastflaske, en isoporplate eller annen plast i sjøen, brytes det ikke ned til jord. 
+                            Istedet blir ditt avfall til tusenvis av små biter, marin forsøpling som fugler og fisker tror er mat.
+                        </p>  
+                </div>
+                <img src="images/plast-i-havet.jpg" alt="En skilpadde som er fanget i plast">
+                <div class="pull">.</div>
+            </div> 
+                <img class="many-fishes" src="images/fish_school.png" alt= "Flere fisker som svømmer i lag">   
+                <img class="plastic-bag" src="images/plastic-bag.png" alt="Et bilde av en plastikkpose">
+                <img class="plastic-bottle" src="images/plastic-bottle.png" alt="Et bilde av en plastflaske">   
+        </section>
+        <!--
+            Andre seksjon inneholder andre nivået av havdypet. Denne seksjonen skal inneholde ulike fisker
+            som har fått animasjoner på seg. Ene fisken er lagt i en div`tag da den skal ha en hover effekt
+            hvor den byttes til et annet bilde. For å få det til å se ut som den blåser seg opp. De andre fiskene
+            er in en img tag hvor alle har fått en klasse, som styles i CSS.
+        -->
+        <section class="second-level"> 
+            <div class="factbox-right">
+                <div class="pull-right">.</div>   
+                <div class="factbox-container">
+                    <h2>Dyrelivet i havet</h2>
+                        <p>Havet er verdens største leveområde, og hjem til et eventyrlig skattkammer av forskjellige arter. 
+                           Her finnes enorme variasjoner av liv, fra de minste mikroskopiske plankton til havets største skapninger - hvalene.
+                           Fisk og annen sjømat utgjør livsgrunnlaget for kystsamfunn verden over. Tre milliarder mennesker har i dag sjømat som en viktig næringskilde.
+                           Havet vil være en stadig viktigere matkilde etter hvert som verdens befolkning øker. 
+                           Fisk og skalldyr slik vi kjenner det i dag, men også spiselig tang og tare kan bli endel av maten vår.
+                        </p>
+                </div>
+                <img src="images/dyreliv.jpg" alt="">         
+            </div>
+                <img class="biggreenfish" src="images/green-fish.png" alt="Grønn fisk">
+                <img class="greenfish" src="images/green-fish.png" alt="Medium grønn fisk">
+                <img class="smallfish" src="images/green-fish.png" alt="Liten grønn fisk">
+                <img class="squid" src="images/squid.png" alt="Blekksprut">
+                <div class="blowfish"></div> 
+        </section>
+        <!--
+            Siste seksjon inneholder havbunnen. Her finner har vi et bakgrunnsbilde på bunnen av seksjonen. 
+            En skattekiste i en div container med hover-effekt. En "darkfish"
+            i en div-container som også endrer seg ved hover-effekt.
+        -->
+        <section class="bottom-level">
+            <div class="factbox-left">
+                <div class="factbox-container">
+                    <h2>Havbunnen</h2>
+                        <p>Velkommen til havbunnen! Havbunnen er fullt av liv og her finnes de rareste fiskene. 
+                            De dypeste havene er mellom 4000 til 6000 meter dype! I tillegg finnes det dypthavsgroper som har en maksimumsdyp på cirka 11 000 meter. 
+                            Når er du er så dypt i havet er det ikke mulig for lys å nå ned til oss, så fiskene som bor her nede ser veldig annerledes ut fra fiskene som bor lenger oppe. 
+                            Det kan virke som om vi har oppdaget mye av havbunnen, men mennesker har faktisk bare oppdaget rundt 5% av det som befinner seg der nede.
+                        </p>
+                </div>
+                <img src="images/sea-bottom.jpg" alt="Picture of weird fish">
+                <div class="pull">.</div>
+            </div> 
+                <div class="darkfish"></div>
+                <!--
+                    Bildefiler av sjøgress. Disse blir posisjonert ulikt på denne seksjonen og animert med CSS.
+                -->
+                <img class="seaweed-one" src="images/tang.png" alt="Picture of seaweed">
+                <img class="seaweed-two" src="images/tang.png" alt="Picture of seaweed">
+                <img class="seaweed-three" src="images/tang.png" alt="Picture of seaweed">
+                <img class="seaweed-four" src="images/tang.png" alt="Picture of seaweed">
+               <!--
+                   Resten av havbunnen med et kistebilde i en div-container. En plastikk kopp med en kreps. Og selve havbunnen som bakgrunnsbilde.
+               -->
+                <div class="chest"></div>
+                <img class="plastic-cup" src="images/plastic-cup.png" alt="Bilde av en plaskopp med en kreps i">
+                <img class="bubble-boat" src="images/bubblegif.png" alt="Bilde av bobler rundt båten">
+                <img class="bottom" src="images/bottom.png" alt="Picture of ocean floor">
+            </section>
+    </main>
+    <footer>
+        <p>Kodet av kohort 7: Kristoffer, Mikkel, Ørjan og Sigurd</p>
+        <a href="#top">Til toppen </a>
+    </footer>
+    <!--
+        Bildefiler av bobler. Disse blir posisjonert ulikt på body med animasjoner med CSS 
+    -->
+    <img class="bubble-one" src="images/bubblegif.png" alt="Bilde av bobler">
+    <img class="bubble-two" src="images/bubblegif.png" alt="Bilde av bobler">
+    <img class="bubble-three" src="images/bubblegif.png" alt="Bilde av bobler">
+    <img class="bubble-four" src="images/bubblegif.png" alt="Bilde av bobler">
+    <img class="bubble-five" src="images/bubblegif.png" alt="Bilde av bobler">
+    <img class="bubble-six" src="images/bubblegif.png" alt="Bilde av bobler">
+    <img class="bubble-seven" src="images/bubblegif.png" alt="Bilde av bobler">
+  </body>
+</html>

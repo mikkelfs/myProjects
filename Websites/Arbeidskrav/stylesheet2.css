@@ -1,0 +1,156 @@
+body {
+    background-image: url(Bilder/skog2.jpg);
+    background-size: cover;
+}
+
+/*
+Divs
+*/
+
+.box1 {
+    position: static;
+    border: solid black 2px;
+    background-color: white;
+    width: 20%;
+    padding: 10px;
+    margin: 10px;
+}
+
+.box2 {
+    position: static;
+    border: solid black 2px;
+    background-color: white;
+    width: 20%;
+    font-family: 'Ranchers', cursive;
+    padding: 10px;
+    margin: 10px;
+}
+
+.box3 {
+    position: static;
+    border: solid black 2px;
+    background-color: white;
+    width: 20%;
+    padding: 10px;
+    margin: 10px;
+    font-family: 'Ranchers', cursive;
+}
+
+.box4 {
+    background-color: white;
+    width: 300px;
+    padding: 1px;
+    border: solid black 2px;
+    text-align: center;
+    position: relative;
+    left: 100px;
+    
+}
+
+.box5 {
+    background-color: white;
+    border: solid black 2px;
+    width: 400px;
+    position: relative;
+    left: 30px;
+    top: 20px;
+}
+
+.animationDiv {
+    position: relative;
+    
+    width: 450px;
+    height: 300px;
+    
+}
+
+.animationDiv:hover {
+    position: relative;
+    animation-name: drivingAnimation; 
+    animation-duration: 4s;
+}
+
+/* 
+Images
+*/
+
+.logoPicture {
+    width: 100%
+}
+
+.waterfall {
+    width: 90%;
+    margin-bottom: 40px;
+}
+
+.parents {
+    position: relative;
+    left: 80px;
+    width: 50%;
+    
+}
+
+.scratching {
+    width: 100%;
+}
+
+.driving {
+    position: relative;
+    width: 80%;
+    
+}
+
+.stripe {
+    margin: 0px;
+}
+
+
+/*
+Text
+*/
+
+h2 {
+    text-align: center;
+    font-family: 'Ranchers', cursive;
+    
+}
+
+p {
+    text-align: center;
+}
+
+/*
+Flex
+*/
+
+.flex {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; 
+    justify-content: center;
+    justify-content: space-around;
+}
+
+.flex2 {
+    position: relative;
+    top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-content: space-around;
+}
+
+/*
+Animasjon
+*/
+
+@keyframes drivingAnimation {
+    0% { left: 00px;
+    }
+    
+    100% {
+        left: 1100px;
+        transform: rotate(360deg);
+    }
+    
+}

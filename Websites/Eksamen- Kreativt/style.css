@@ -1,0 +1,823 @@
+@font-face {
+    font-family: 'Jaldi';
+    src: url(fonts/Jaldi/Jaldi-Regular.ttf);
+}
+@font-face {
+    font-family: 'Libre Baskerville';
+    src: url(fonts/Libre_Baskerville/LibreBaskerville-Regular.ttf);
+}
+
+/* Generell stiling - Sigurd*/
+
+body {
+    font-family: 'Jaldi', sans-serif;
+    background: linear-gradient(rgb(63,120,126), rgb(13, 34, 36));
+    font-size: 16px;
+    margin: 0;
+    padding: 0; 
+    width: 100%; 
+    overflow-x: hidden;
+}
+
+section {
+    width: 100%; 
+    height: 1000px; 
+    position: relative;
+}
+
+h1 {
+    position: absolute;
+    z-index: 1; 
+    top: 100px;
+    left: 30%;
+    font-size: 6rem;
+    color: rgb(63,120,126);
+    text-transform: uppercase;
+}
+
+h2 {
+    font-weight: 700; 
+    font-size: 2rem;
+    color: rgb(38, 38, 38); 
+}
+
+p {
+    font-family: 'Libre Baskerville', serif; 
+    line-height: 2rem;
+    font-size: 0.9rem;
+    color: rgb(38, 38, 38); 
+    
+}
+
+a {
+    text-decoration: none;
+    color: rgb(87, 68, 34);
+    margin-left: 30px; 
+}
+
+footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center; 
+    font-family: 'Libre baskerville', serif;
+    background-color: rgb(255,233,209);
+    margin: 0px; 
+    padding: 5px; 
+    color: rgb(87, 68, 34);
+}
+
+/* Stiling for faktaboksene - Sigurd*/ 
+
+.factbox-left, .factbox-right {
+    position: absolute;
+    top: 300px;    
+    padding: 50px;   
+    width: 1200px;
+    background-color: rgb(255,255,255);
+    transition: 0.5s ease-in-out; 
+    box-shadow: 5px 10px 10px rgba(0,0,0,0.3); 
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    z-index: 2;
+    
+} 
+
+.factbox-right {
+   right: -1250px; 
+   border-radius: 15px 0px 0px 15px;   
+}
+
+.factbox-right:hover {
+    right: 0px; 
+}
+
+.factbox-left {
+    left: -1250px; 
+    border-radius: 0px 15px 15px 0px; 
+}
+
+.factbox-left:hover {
+    left: 0px;    
+}
+
+.factbox-left img, .factbox-right img { 
+    max-height: 400px;
+    min-width: 500px; 
+    border-radius: 10px;
+}
+
+.factbox-container {
+    margin-right: 50px; 
+    max-width: 600px; 
+}
+
+.pull, .pull-right {
+    position: relative; 
+    width: 3px; 
+    height: 50px; 
+    margin: auto 0px; 
+    color: lightgray; 
+    background-color: lightgray;
+    border-radius: 10%;
+}
+
+.pull-right {
+    right: 25px; 
+}
+
+.pull {
+    left: 25px; 
+}
+
+/* 
+Generell animasjon som går på hele body.  
+Alle boblene har lik animasjon, men posisjonert forskjellige steder på body. - Ørjan
+*/
+
+.bubble-one, .bubble-two, .bubble-three, .bubble-four, .bubble-five, .bubble-six, .bubble-seven  {
+    position: absolute;
+    width: 90px;
+    z-index: -1;
+    animation: ascend-bubble;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: both;
+    animation-duration: 12s;   
+}
+
+/* 
+Posisjonering og effekter på hver enkelt boble på body - Ørjan
+*/
+
+.bubble-one {
+    left: 20%;
+}
+
+.bubble-two {
+    left: 40%;
+    animation-delay: 4s;
+    transform: rotate(180deg);
+}
+
+.bubble-three {
+    left: 60%;
+    animation-delay: 6s;   
+}
+
+.bubble-four {
+    left: 80%;
+    animation-delay: 8s;
+    transform: rotate(180deg);
+}
+
+.bubble-five {
+    left: 70%;
+    animation-delay: 10s;   
+}
+
+.bubble-six {
+    left: 90%;
+    animation-delay: 3s;
+    transform: rotate(90deg);   
+}
+
+.bubble-seven {
+    left: 10%;
+    animation-delay: 1s;     
+}
+
+/* Stiling for header - Sigurd*/
+
+#header-background {
+    z-index: -1; 
+    width: 100%; 
+}
+
+#clouds {
+    position: absolute;
+    z-index: 0;
+    animation: clouds 50s infinite;
+}
+
+#boat {
+    position: absolute;
+    top: 400px;
+    left: 200px; 
+    background: url("images/boat_still.png");
+    display: inline;  
+    width: 617px;
+    height: 411px; 
+}
+
+#boat:hover {
+    background: url(images/boat_animation.png);
+    animation: boat-bobbing ease 3s infinite;
+}
+
+/* Animasjoner - header */
+
+@keyframes boat-bobbing {
+    0% {top: 400px; transform: rotate(0deg);}
+    25% {transform: rotate(-3deg);}
+    50% {top: 410px;}
+    75% {transform: rotate(5deg);}
+    100% {top: 400px; transform: rotate(0deg);}
+}
+
+@keyframes clouds {
+    0% {left: -800px; opacity: 0%;}
+    30% {opacity: 100%;}
+    70% {opacity: 100%;}
+    100% {left: 800px; opacity: 0%;}
+}
+
+/* Stiling for første havnivå - Ørjan
+Her er animasjonen satt for første del av havnivået.
+Bildefilene har relativ posisjonering innenfor sin seksjon.*/
+
+.plastic-bag {
+    position: relative;
+    top: 400px;
+    left: 1000px;
+    opacity: 0.9;
+    animation-name: plastic-bag-ani;
+    animation-duration: 30s;
+    animation-iteration-count: infinite; 
+}
+
+
+.plastic-bottle {
+    position: relative;
+    top: 50px;
+    left: -270px;
+    opacity: 0.8;
+    animation-name: plastic-bottle-ani;
+    animation-duration: 60s;
+    animation-iteration-count: infinite;
+     
+}
+
+.many-fishes {
+    position: relative;
+    width: 200px;
+    animation-name: cluster-swim;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;  
+}
+
+.bubble-boat {
+    position: absolute;
+    width: 40px;
+    animation-name: boat-bubbles;
+    animation-duration: 12s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+.plastic-cup {
+    position: relative;
+    width: 90px;
+    left: 630px;
+    top: 440px;
+    z-index: 1;
+    transform: scaleX(-1);
+    transform: rotate(290deg);
+}
+
+.plastic-cup:hover {
+    animation: shake 1.2s;
+    
+}
+
+/* Ørjan sine animasjoner -
+   alle animasjoner er gjort i key-frames. 
+
+Animasjon plastikkpose havnivå 1 */
+
+@keyframes plastic-bag-ani {
+    0% {
+        top: 400px;
+        left: 1300px;
+        transform: rotate(0deg);    
+    }
+    50% {
+        top: 590px;
+        left: 0px;
+        transform: rotate(360deg);        
+    }
+    100% {
+        top: 400px;
+        left: 1300px;
+        transform: rotate(0deg);         
+    }
+}
+
+/* Animasjon fiskestim havnivå 1
+- ønsket effekt her er at fiskene kommer nærmere skjermen ved å skalere dem opp underveis */
+
+@keyframes cluster-swim {
+    0% {
+        top: 200px;
+        left: 1900px;
+        transform: scale(1);
+    }
+    100% {
+        top: 210px;
+        left: -270px;
+        transform: scale(2.6);
+        z-index: 0;
+    }
+    
+}
+
+/* Animasjonen av plastikkflaske som flyter rett i underkant av sjølinjen */
+
+@keyframes plastic-bottle-ani {
+    0% {
+        top: 50px;
+        left: -260px;
+        transform: rotate(0deg);   
+    }
+    50% {
+        top: 90px;
+        left: 1000px;
+        transform: rotate(180deg);        
+    }
+    100% {
+        top: 50px;
+        left: -270px;
+        transform: rotate(360deg);     
+    }
+}
+
+/* Boble animasjon, fra bunn til topp på body */
+
+@keyframes ascend-bubble {
+    0% {
+        bottom: 0px;
+        top: 3300px;
+        opacity: 0%;
+        
+    }
+    2% {
+        bottom: 0px;
+        top: 3300px;
+        opacity: 100%;
+        
+    }
+    98% {
+        top: 800px;
+        bottom: 2000px;
+        opacity: 100%;
+       
+    }
+    100% {
+        top: 800px;
+        bottom: 2000px;
+        opacity: 0%;
+    }
+   
+}
+
+/* Boble animasjon rundt pipene til båten på havbunnen */
+
+@keyframes boat-bubbles {
+    0% {
+        left: 1090px;
+        top: 600px;
+    }
+    50% {
+        left: 1150px;
+        top: 600px;
+    }
+    100% {
+        left: 1200px;
+        top: 600px;
+    }
+}
+
+  /* Riste animasjon på plastkoppen med krepsen 
+  - animasjonen blir brukt som hover-effekt */
+
+  @keyframes shake {
+    10%, 90% {
+      transform: translate3d(-1px, 0, 0);
+    }
+    
+    20%, 80% {
+      transform: translate3d(2px, 0, 0);
+    }
+  
+    30%, 50%, 70% {
+      transform: translate3d(-4px, 0, 0);
+    }
+  
+    40%, 60% {
+      transform: translate3d(4px, 0, 0);
+    }
+  }
+
+/*  
+    Stiling for andre havnivå - Kristoffer
+    Her er de bildefilene som er stylet i andre seksjon.
+    Den strøste grønne fisken som er posisjonert. 
+*/
+
+.biggreenfish {
+    position: absolute;
+    left: 1100px;
+    top: 20px;
+    animation-name: greenfish-swim;
+    animation-iteration-count: infinite;
+    animation-duration: 6s;
+    animation-timing-function: ease-out;
+}
+
+/* Den lille fisken som er posisojnert og animert. */
+
+.smallfish {
+    position: absolute;
+    left: 1150px;
+    top: 50px;
+    width: 100px;
+    animation-name: smallfish-swim;
+    animation-iteration-count: infinite;
+    animation-duration: 6s;
+    animation-timing-function: ease-out;
+}
+
+/* Den mellomste fisken som er posisjonert. */
+
+.greenfish {
+    position: absolute;
+    left: 1125px;
+    top: 35px;
+    width: 150px;
+    animation-name: mediumfish-swim;
+    animation-iteration-count: infinite;
+    animation-duration: 6s;
+    animation-timing-function: ease-out;
+}
+
+/*Blekkspruten er posisjonert i forhold til de andre fiskene,
+også rotert litt for å vende riktig vei. Animasjon på den også.*/
+
+.squid {
+    position: relative;
+    width: 300px;
+    transform: rotate(60deg);
+    top: 750px;
+    right: 200px;
+    animation-name: squid-swim;
+    animation-iteration-count: infinite;
+    animation-duration: 15s;
+     animation-timing-function: ease-out;
+}
+
+/* Den oransje blowfish bilde sendes ut i en div tag.
+Den er posisjonert relativt for de andre fiskene i seksjonen.*/
+
+.blowfish {
+    background: url(images/blowfish_small.png)no-repeat;
+    position: relative;
+    left: 50px;
+    top: 400px;
+    height: 400px;
+    width: 500px;
+    animation-name: blowfish-swim;
+    animation-iteration-count: infinite;
+    animation-duration: 10s;
+    animation-timing-function: ease-out;
+    transition: 0.1s;
+}
+
+/* Brukt en hover effekt for å bytte bilde til en oppblåst fisk.
+Brukt animation-play-state for å stoppe animasjonen når du hoverer på fisken.*/
+
+.blowfish:hover {
+    background: url(images/blowfish_big.png)no-repeat;
+    animation-play-state:paused; 
+}
+
+@keyframes greenfish-swim{
+    0% {
+        left: 1500px;
+        top: 100px;
+        transform: rotate(20deg);
+    }
+    25% {
+        left: 700px;
+        top: 60px;
+    }
+    50% {
+        left: 500px;
+        top: 70px;
+        transform: rotate(0deg);
+    }
+    75% {
+        left: 250px;
+        top: 60px;
+        transform: rotate(20deg);
+    }
+    100% {
+        left: -700px;
+        top: 20px;
+    }   
+}
+
+@keyframes smallfish-swim {
+    0% {
+        left: 1700px;
+        top: 20px;
+        transform: rotate(20deg);
+    }
+    25% {
+        left: 1200px;
+        top: 50px;
+    }
+    50% {
+        left: 900px;
+        top: 20px;
+        transform: rotate(0deg);
+    }
+    75% {
+        left: 600px;
+        top: 50px;
+        transform: rotate(20deg);
+    }   
+    100% {
+        left: -150px;
+        top: 20px;
+    }
+}
+
+@keyframes mediumfish-swim {
+    0% {
+        left: 1600px;
+        top: 30px;
+        transform: rotate(20deg);
+    }
+    25% {
+        left: 1000px;
+        top: 40px;
+    }
+    50% {
+        left: 750px;
+        top: 30px;
+        transform: rotate(0deg);
+    }
+    75% {
+        left: 450px;
+        top: 40px;
+        transform: rotate(20deg);
+    }
+    100% {
+        left: -400px;
+        top: 30px;
+    }   
+}
+
+/* Blowfishen sin animasjon og posisjonering. */
+
+@keyframes blowfish-swim {
+    0% {
+        left: 1400px;
+        top: -100px;
+    }
+    25% {
+        left: 1000px;
+        top: 200px;
+    }
+    50% {
+        left: 700px;
+        top: -100px;
+    }
+    75% {
+        left: 300px;
+        top: 10px;
+    }
+    90% {
+        left: 50px;
+        top: -60px;
+    }
+    100% {
+        left:-500px;
+        top: 200px;
+    }
+}
+
+/*Blekkspruten sin animasjon og posisjonering.*/
+
+@keyframes squid-swim {
+    0% {
+        right: 500px;
+        top: 750px;
+        transform: rotate(90deg);
+    }
+    
+    20% {
+        right: 200px;
+        top: 700px;
+        transform: rotate(100deg);
+    }
+    40% {
+        right: 0px;
+        top: 640px;
+        transform: rotate(90deg);
+    }
+    
+    60% {
+        right: -200px;
+        top: 600px;
+        transform: rotate(100deg);
+    }
+    80% {
+        right: -500px;
+        top: 550px;
+        transform: rotate(90deg);
+    }
+    90% {
+        right: -800px;
+        top: 500px;
+        transform: rotate(100deg);
+    }
+    100% {
+        right: -1450px;
+        top: 400px; 
+        transform: rotate(90deg);
+    }
+}
+
+/* Stiling for havbunnen - Mikkel*/
+
+/* Fisk på bunnen som kan lyse opp */
+
+.darkfish {
+    width: 500px;
+    height: 440px;
+    position: relative;
+    left: 700px;
+    animation-name: darkfish-swim;
+    animation-iteration-count: infinite;
+    animation-duration: 25s; 
+    animation-direction: alternate;
+    background: url(images/darkfish_dark2.png) no-repeat;
+    z-index: 1;
+}
+
+.darkfish:hover {
+    background: url(images/darkfish_light2.png) no-repeat;
+}
+
+/* Kiste på bunnen som kan åpnes og lukkes */
+
+.chest {
+    position: absolute;
+    bottom: 20px; 
+    left: 410px;
+    width: 300px;
+    height: 345px;
+    background: url(images/chest_closed.png) no-repeat;
+    z-index: 1;
+}
+
+.chest:hover {
+    background: url(images/chest_open.png) no-repeat;   
+}
+
+/* Hvert eneste sjøgress som flyter på bunnen */ 
+
+.seaweed-one {
+    position: relative;
+    animation-name: floating-seaweed;
+    animation-duration: 50s;
+    animation-iteration-count: infinite;
+    width: 70px;
+}
+
+.seaweed-two {
+    position: relative;
+    animation-name: floating-seaweed2;
+    animation-duration: 55s;
+    animation-iteration-count: infinite;
+    width: 70px;
+}
+
+.seaweed-three {
+    position: relative;
+    animation-name: floating-seaweed3;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+    width: 70px;
+}
+
+.seaweed-four { 
+    position: relative;
+    animation-name: floating-seaweed4;
+    animation-duration: 40s;
+    animation-iteration-count: infinite;
+    width: 70px;
+}
+
+/* Bunnen av havet */
+
+.bottom {
+    position: absolute; 
+    left: 50%;
+    transform: translate(-50%);
+    bottom: 0px;
+}
+
+/* Animasjoner til den mørke fisken */
+
+@keyframes darkfish-swim {
+    0% {
+        top: 20px;
+        left: 1200px;
+    }
+    25% {
+        top: -20px;
+        left: 600px;
+    }
+
+    50% {
+        top: 20px;
+        left: 0px;
+    }
+    75% {
+        top: -20px;
+        left: 600px;
+    }
+    100% {
+        top: 20px;
+        left: 1200px;
+    }
+}
+/* Forskjellige animasjoner til alt sjøgress */
+
+@keyframes floating-seaweed {
+    0% {
+        bottom: 0px;
+        left: 1900px;
+    }
+    50% {
+        bottom: 400px;
+        left: 450px;
+        transform: rotate(360deg);
+    }
+    75% {
+        bottom: 0px;
+        left: 1150px;
+    }
+
+    100% {
+        bottom: 0px;
+        left: 1900px;
+    }
+} 
+
+@keyframes floating-seaweed2 {
+    0% {
+        bottom: 0px;
+        left: -150px;
+    }
+    50% {
+        bottom: 600px;
+        left: 600px;
+    }
+
+    100% {
+        bottom: 400px;
+        left: 1900px;
+    }
+}
+
+@keyframes floating-seaweed3 {
+    0% {
+        left: 1900px;
+        bottom: -100px;
+
+    }
+    100% {
+        left: -300px;
+        bottom: 200px;
+        transform: rotate(720deg);
+    }
+}
+
+@keyframes floating-seaweed4 {
+    0% {
+        left: -200px;
+        bottom: -150px;
+    }
+    100% {
+        left: 1800px;
+        bottom: 0px;
+        transform: rotate(720deg);
+    }
+}
+
